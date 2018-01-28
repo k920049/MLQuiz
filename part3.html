@@ -1,0 +1,18 @@
+<h4>3. Prior, likelihood, posterior에 대해 각각 설명해 주세요</h4>
+<h4>Prior</h4>
+<p><em>X</em>가 <img src="https://tex.s2cms.ru/svg/%5Ctheta" alt="\theta" />에 의해 그 분포가 결정되는 <em>random variable</em> 이라고 가정하고, 이 때 <img src="https://tex.s2cms.ru/svg/%5Ctheta" alt="\theta" />는 <em>well-defined</em> 된 <em>set</em> <img src="https://tex.s2cms.ru/svg/%5COmega" alt="\Omega" /> 의 한 원소라고 가정합니다. 여기서 <img src="https://tex.s2cms.ru/svg/%5Ctheta" alt="\theta" /> 는 평균이나 분산 같은 추정량이면 데이터를 더 잘 표현할 수 있는 값이 됩니다.</p>
+<p>역사적으로 <em>Frequentist</em>들은 이 <img src="https://tex.s2cms.ru/svg/%5Ctheta" alt="\theta" />를 파라미터로 보았지만, <em>Bayesian</em>들은 <img src="https://tex.s2cms.ru/svg/%5Ctheta" alt="\theta" />를 <img src="https://tex.s2cms.ru/svg/%5COmega" alt="\Omega" />를 정의역으로 가지는 <em>random variable</em> <img src="https://tex.s2cms.ru/svg/%5CTheta" alt="\Theta" />라는 관점에서 보았습니다. 그러므로 우리는 <img src="https://tex.s2cms.ru/svg/%5CTheta" alt="\Theta" />에 관한 <em>pdf</em>를 정의할 수 있고,</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/h(%5Ctheta)%20%3D%20%5Cbegin%7Bcases%7Dk%2C%20%5Ctheta%5Cin%5CTheta%5C%5C%200%2C%20%5Ctheta%5Cnotin%5CTheta%5Cend" alt="h(\theta) = \begin{cases}k, \theta\in\Theta\\ 0, \theta\notin\Theta\end" /></p>
+<p>이 <em>pdf</em>를 <strong>prior</strong> 라고 정의합니다.</p>
+<h4>Likelihood</h4>
+<p><em>Random sample</em> <img src="https://tex.s2cms.ru/svg/X_1%2C%20X_2%2C%20...%20X_n" alt="X_1, X_2, ... X_n" /> 이 있다고 가정합니다. <img src="https://tex.s2cms.ru/svg/%5CTheta%20%3D%20%5Ctheta" alt="\Theta = \theta" />가 결정되었을 때 우리는 이것을 <em>joint conditional pdf</em>의 형태로 나태낼 수 있고 그것은 다음과 같습니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/L(x%7C%5Ctheta)%20%3D%20f(x_1%7C%5Ctheta)...f(x_n%7C%5Ctheta)" alt="L(x|\theta) = f(x_1|\theta)...f(x_n|\theta)" /></p>
+<p>우리는 이것을 <strong>likelihood</strong> 라고 정의합니다.</p>
+<h4>Posterior</h4>
+<p>위의 식에 <strong>Bayes theorem</strong>을 적용하게 되면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/g(x%2C%20%5Ctheta)%20%3D%20L(x%7C%5Ctheta)h(%5Ctheta)" alt="g(x, \theta) = L(x|\theta)h(\theta)" /></p>
+<p>가 되고 이것을 \theta 에 관해서 marginalize out 시키면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/g_1(x)%20%3D%20%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7D%20g(x%2C%20%5Ctheta)d%5Ctheta" alt="g_1(x) = \int_{-\infty}^{\infty} g(x, \theta)d\theta" /></p>
+<p>가 성립합니다. 이것을 <em>random sample</em> <img src="https://tex.s2cms.ru/svg/X" alt="X" /> 가 주어졌을 때 <img src="https://tex.s2cms.ru/svg/%5CTheta" alt="\Theta" />에 관한 pdf 로 나타내면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/k(%5Ctheta%7Cx)%20%3D%20%5Cfrac%7Bg(x%2C%20%5Ctheta)%7D%7Bg_1(x)%7D%20%3D%20%5Cfrac%7BL(x%7C%5Ctheta)h(%5Ctheta)%7D%7Bg_1(x)%7D" alt="k(\theta|x) = \frac{g(x, \theta)}{g_1(x)} = \frac{L(x|\theta)h(\theta)}{g_1(x)}" /></p>
+<p>입니다. 이 때 <img src="https://tex.s2cms.ru/svg/k(%5Ctheta%7Cx)" alt="k(\theta|x)" /> 를 <strong>posterior</strong> 라 정의합니다.</p>

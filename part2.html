@@ -1,0 +1,29 @@
+<h4>2.가우시안 분포에 대해 설명해 주세요</h4>
+<p>다음과 같은 적분을 고려해 보겠습니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/I%20%3D%20%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7D%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp(%5Cfrac%7B-z%5E2%7D%7B2%7D)dz%20-(1)" alt="I = \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}exp(\frac{-z^2}{2})dz -(1)" /></p>
+<p>이 적분의 integrand 는 positive continuous function 이며 upper bound 가 존재합니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/0%20%3C%20exp(%5Cfrac%7B-z%5E2%7D%7B2%7D)%20%3C%20exp(-%7CZ%7C%20%2B%201)%2C%20-%5Cinfty%20%3C%20z%20%3C%20%5Cinfty" alt="0 &lt; exp(\frac{-z^2}{2}) &lt; exp(-|Z| + 1), -\infty &lt; z &lt; \infty" /></p>
+<p>이 적분의 값을 구하기 위해 우선 제곱을 씌워주면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/I%5E2%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7D%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7D%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7Dexp(-%5Cfrac%7Bz%5E2%20%2B%20w%5E2%7D%7B2%7D)dzdw" alt="I^2 = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}exp(-\frac{z^2 + w^2}{2})dzdw" /></p>
+<p>가 됩니다. 이것을 극좌표계로 다시 표현하면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/I%5E2%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7D%5Cint_%7B0%7D%5E%7B2%5Cpi%7D%5Cint_%7B0%7D%5E%7B%5Cinfty%7Dexp(-%5Cfrac%7Br%5E2%7D%7B2%7D)r%20drd%5Ctheta%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7D%5Cint_%7B0%7D%5E%7B2%5Cpi%7Dd%5Ctheta%20%3D%201" alt="I^2 = \frac{1}{\sqrt{2\pi}}\int_{0}^{2\pi}\int_{0}^{\infty}exp(-\frac{r^2}{2})r drd\theta = \frac{1}{\sqrt{2\pi}}\int_{0}^{2\pi}d\theta = 1" /></p>
+<p>입니다.</p>
+<p>(1) 에서 <em>integrand</em>는 모든 정의역에 대해서 양의 값(support)을 가지고, 적분하면 1이 되므로 <em>continuous random variable</em>의 <em>pdf</em>가 됩니다. 우리는 이 <img src="https://tex.s2cms.ru/svg/Z" alt="Z" />에 관한 분포를 <strong>Normal(Gaussian) distribution</strong>이라 정의하고 다음과 같이 표현합니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/f(z)%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp(%5Cfrac%7B-z%5E2%7D%7B2%7D)%2C%20-%5Cinfty%20%3C%20z%20%3C%20%5Cinfty" alt="f(z) = \frac{1}{\sqrt{2\pi}}exp(\frac{-z^2}{2}), -\infty &lt; z &lt; \infty" /></p>
+<p>이 분포의 <em>moment generating function</em>은 다음과 같습니다. 우선 <img src="https://tex.s2cms.ru/svg/t%5Cin%20%5CR" alt="t\in \R" />에서</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/E%5Bexp(tZ)%5D%20%3D%20%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7Dexp%5C%7Btz%5C%7D%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp%5C%7B-%5Cfrac%7B1%7D%7B2%7Dz%5E2%5C%7Ddz" alt="E[exp(tZ)] = \int_{-\infty}^{\infty}exp\{tz\}\frac{1}{\sqrt{2\pi}}exp\{-\frac{1}{2}z^2\}dz" /></p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/%20%3D%20exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp%5C%7B-%5Cfrac%7B1%7D%7B2%7D(z%20-%20t)%5E2%5C%7Ddz" alt=" = exp\{\frac{1}{2}t^2\}\int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}exp\{-\frac{1}{2}(z - t)^2\}dz" /></p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/%20%3D%20exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp%5C%7B-%5Cfrac%7B1%7D%7B2%7Dw%5E2%5C%7Ddw" alt=" = exp\{\frac{1}{2}t^2\}\int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}exp\{-\frac{1}{2}w^2\}dw" /></p>
+<p>입니다. 따라서</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/M_Z(t)%20%3D%20exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D" alt="M_Z(t) = exp\{\frac{1}{2}t^2\}" /></p>
+<p>이고, 이것의 1 계 도함수와 2 계 도함수는 다음과 같습니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/M_z%5E%5Cprime(t)%20%3D%20t*exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D" alt="M_z^\prime(t) = t*exp\{\frac{1}{2}t^2\}" /></p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/M_z%5E%7B%5Cprime%5Cprime%7D(t)%20%3D%20exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D%20%2B%20t%5E2*exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D" alt="M_z^{\prime\prime}(t) = exp\{\frac{1}{2}t^2\} + t^2*exp\{\frac{1}{2}t^2\}" /></p>
+<p>입니다. <img src="https://tex.s2cms.ru/svg/t%20%3D%200" alt="t = 0" />에서 값을 평가하면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/E(Z)%20%3D%200%2C%20Var(Z)%20%3D%201" alt="E(Z) = 0, Var(Z) = 1" /></p>
+<p>입니다.</p>
+<p>다음으로 임의의 <em>continuous random variable</em> <img src="https://tex.s2cms.ru/svg/X" alt="X" />를 다음과 같이 정의합니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/X%20%3D%20bZ%20%2B%20a%2C%20b%20%3E%200" alt="X = bZ + a, b &gt; 0" /></p>
+<p>이것은 <em>bijective</em>하므로 <em>(jacobian)</em> <img src="https://tex.s2cms.ru/svg/J%20%3D%20b%5E%7B-1%7D" alt="J = b^{-1}" />이고 이것을 변수변환하면 <em>pdf</em>는 다음과 같은 형태가 됩니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/f_X(x)%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7Db%7Dexp%5C%7B-%5Cfrac%7B1%7D%7B2%7D(%5Cfrac%7Bx%20-%20a%7D%7Bb%7D)%5E2%5C%7D%2C%20-%5Cinfty%20%3C%20x%20%3C%20%5Cinfty" alt="f_X(x) = \frac{1}{\sqrt{2\pi}b}exp\{-\frac{1}{2}(\frac{x - a}{b})^2\}, -\infty &lt; x &lt; \infty" /></p>
+<p>이것이 일반적으로 정의되는 Gaussian 분포함수의 형태입니다.</p>

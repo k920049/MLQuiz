@@ -1,0 +1,52 @@
+<h4>1.Probability density function (pdf)와 cumulative distribution function (cdf) 개념을 설명해 주세요.</h4>
+<p>이 질문에 답하기 위해서는 우선 <strong>random variable</strong> 에 대한 정의가 필요합니다.</p>
+<blockquote>
+<p><em>definition) Consider a random experiment with a sample space C. A function <img src="https://tex.s2cms.ru/svg/X" alt="X" />, which assigns to each element <img src="https://tex.s2cms.ru/svg/c%5Cin%20C" alt="c\in C" /> one and only one number <img src="https://tex.s2cms.ru/svg/X(c)%20%3D%20x" alt="X(c) = x" />, is called a <strong>random variable</strong>. The <strong>space</strong> or <strong>range</strong> of <img src="https://tex.s2cms.ru/svg/X" alt="X" /> is the set of real number <img src="https://tex.s2cms.ru/svg/D%20%3D%20%5C%7Bx%20%3A%20x%20%3D%20X(c)%2C%20c%5Cin%20C%5C%7D" alt="D = \{x : x = X(c), c\in C\}" />.</em></p>
+</blockquote>
+<p>샘플을 추출할 수 있는 공간 <img src="https://tex.s2cms.ru/svg/C" alt="C" />가 있고, 해당 공간의 원소 <img src="https://tex.s2cms.ru/svg/c" alt="c" />에 대하여 1 대 1 대응을 만족하고 치역이 어떤 수(보통은 <img src="https://tex.s2cms.ru/svg/%5CR" alt="\R" />)인 함수를 <strong>random variable</strong>이라 정의합니다. 이 때, 치역인 <img src="https://tex.s2cms.ru/svg/D" alt="D" />는 우리가 분석시 관심을 두는 샘플 스페이스가 됩니다.</p>
+<p>샘플 스페이스 <img src="https://tex.s2cms.ru/svg/D" alt="D" /> 이외에도 함수 <img src="https://tex.s2cms.ru/svg/X" alt="X" />는 또 자체의 확률을 내재하는데요(어떤 원소 <img src="https://tex.s2cms.ru/svg/x%5Cin%20D" alt="x\in D" />가 뽑힐 확률), 이를 두고 <img src="https://tex.s2cms.ru/svg/X" alt="X" />의 <strong>distribution</strong>이라고 합니다.</p>
+<p>다음으로 <strong>cumulative distribution function</strong>에 대한 정의를 살펴보도록 하겠습니다.</p>
+<blockquote>
+<p><em>definition) Let X be a random variable. Then its <strong>cumulative distribution function</strong>(cdf) is defined by <img src="https://tex.s2cms.ru/svg/F_X(x)" alt="F_X(x)" />, where</em></p>
+<blockquote>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/F_X(x)%20%3D%20P_X((-%5Cinfty%2C%20x%5D)%20%3D%20P(%7Bc%5Cin%20C%20%3A%20X(c)%20%5Cleq%20x%7D)" alt="F_X(x) = P_X((-\infty, x]) = P({c\in C : X(c) \leq x})" /></p>
+</blockquote>
+</blockquote>
+<p><img src="https://tex.s2cms.ru/svg/X" alt="X" />를 <strong>random variable</strong>로 두고 그 치역을 들여다 보면, 해당 치역에서 의미를 부여할 수 있는 범위는 <img src="https://tex.s2cms.ru/svg/(-%5Cinfty%2C%20x%5D" alt="(-\infty, x]" /> 즉 어떤 치역의 원소 <img src="https://tex.s2cms.ru/svg/x" alt="x" />이하의 원소 모두입니다. 이렇게 정의하면 축적된 확률분포를 알 수 있을 뿐만 아니라 분포의 <em>skewness</em> 또한 간접적으로 파악할 수 있는 장점이 있습니다.</p>
+<p>그 외의 <strong>cumulative distribution function</strong>의 특성은 다음과 같습니다.</p>
+<ol>
+<li>
+<p><em>Monotone increasing</em><br>
+For all <img src="https://tex.s2cms.ru/svg/a" alt="a" /> and <img src="https://tex.s2cms.ru/svg/b" alt="b" />, if <img src="https://tex.s2cms.ru/svg/a%20%3C%20b" alt="a &lt; b" />, then <img src="https://tex.s2cms.ru/svg/F(a)%20%5Cleq%20F(b)" alt="F(a) \leq F(b)" /></p>
+</li>
+<li>
+<p><em>The lower limit of <img src="https://tex.s2cms.ru/svg/F" alt="F" /> is 0</em><br>
+<img src="https://tex.s2cms.ru/svg/%5Clim_%7Bx%5Cto-%5Cinfty%7D%20F(x)%20%3D%200" alt="\lim_{x\to-\infty} F(x) = 0" /></p>
+</li>
+<li>
+<p><em>The upper limit of <img src="https://tex.s2cms.ru/svg/F" alt="F" /> is 1</em><br>
+<img src="https://tex.s2cms.ru/svg/%5Clim_%7Bx%5Cto%5Cinfty%7D%20F(x)%20%3D%201" alt="\lim_{x\to\infty} F(x) = 1" /></p>
+</li>
+<li>
+<p><em>F is right continuous</em><br>
+<img src="https://tex.s2cms.ru/svg/%5Clim_%7Bx%5Cleftarrow%20x_0%7D%20F(x)%20%3D%20f(x_0)" alt="\lim_{x\leftarrow x_0} F(x) = f(x_0)" /></p>
+</li>
+</ol>
+<p>마지막으로 <strong>probability density function</strong> 의 정의를 살펴보겠습니다. 살펴보기 이전에 우리는 <strong>continuous random variable</strong>에 대한 정의가 필요합니다.</p>
+<blockquote>
+<p><em>definition) We say a random variable is a <strong>continuous random variable</strong> if its cumulative distribution function <img src="https://tex.s2cms.ru/svg/F_X(x)" alt="F_X(x)" /> is a continuous function for all <img src="https://tex.s2cms.ru/svg/x%5Cin%20%5CR" alt="x\in \R" /></em></p>
+</blockquote>
+<p>즉 <em>cdf</em> 가 연속인 <em>random variable</em>을 두고 우리는 <strong>continuous random variable</strong>이라고 정의합니다. 대부분의 <em>continuous random variable</em>들은 절대 연속입니다. 이것의 해석적인 정의는 다음과 같습니다.</p>
+<blockquote>
+<p><em>definition) Let <img src="https://tex.s2cms.ru/svg/I" alt="I" /> be an interval in the real line <img src="https://tex.s2cms.ru/svg/%5CR" alt="\R" />. A function <img src="https://tex.s2cms.ru/svg/f%3AI%5Crightarrow%20%5CR" alt="f:I\rightarrow \R" /> is absolutely continuous on <img src="https://tex.s2cms.ru/svg/I" alt="I" /> if for every positive number <img src="https://tex.s2cms.ru/svg/%5Cepsilon" alt="\epsilon" />, there is a positive number <img src="https://tex.s2cms.ru/svg/%5Cdelta" alt="\delta" /> such that whenever a finite sequence of pairwise disjoint sub-intervals <img src="https://tex.s2cms.ru/svg/(x_k%2C%20y_k)" alt="(x_k, y_k)" /> of <img src="https://tex.s2cms.ru/svg/I" alt="I" /> with <img src="https://tex.s2cms.ru/svg/x_k%2C%20y_k%20%5Cin%20I" alt="x_k, y_k \in I" /> satisfies <img src="https://tex.s2cms.ru/svg/%5Csum_%7Bk%7D%20(y_k%20-%20x_k)%20%3C%20%5Cdelta" alt="\sum_{k} (y_k - x_k) &lt; \delta" /> then
+<img src="https://tex.s2cms.ru/svg/%5Csum_%7Bk%7D%20%7Cf(y_k)%20-%20f(x_k)%7C%20%3C%20%5Cepsilon" alt="\sum_{k} |f(y_k) - f(x_k)| &lt; \epsilon" /></em></p>
+</blockquote>
+<p>즉 어떠한 정의역의 서로소인 원소들의 차로 급수를 형성하더라도, 그 원소들의 치역의 원소들의 차의 절댓값의 급수는 일정 범위를 넘지 않는다는 정의입니다. 이것과 동치인 정의는 다음과 같습니다.</p>
+<blockquote>
+<p><em>definition) <img src="https://tex.s2cms.ru/svg/f" alt="f" /> has derivative <img src="https://tex.s2cms.ru/svg/f%5E%5Cprime" alt="f^\prime" /> a.e., the derivative is Lebesgue integrable, and <img src="https://tex.s2cms.ru/svg/f(x)%20%3D%20f(a)%20%2B%20%5Cint_%7Ba%7D%5E%7Bx%7D%20f%5E%5Cprime(x)%20dx" alt="f(x) = f(a) + \int_{a}^{x} f^\prime(x) dx" /> for all <img src="https://tex.s2cms.ru/svg/x%5Cin%20%5Ba%2C%20b%5D" alt="x\in [a, b]" /></em></p>
+</blockquote>
+<p>즉 <img src="https://tex.s2cms.ru/svg/f" alt="f" /> 가 measure zero set 이외의 공간에서 도함수를 가지고, 도함수가 르벡 적분 가능하며 위의 식과 같이 표현가능할 경우 절대연속이라 정의합니다. 이것을 <em>continuous random variable</em>에 적용하게 되면,</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/F_X(x)%20%3D%20f(-%5Cinfty)%20%2B%20%5Cint_%7B-%5Cinfty%7D%5E%7Bx%7D%20f_X(t)%20dt" alt="F_X(x) = f(-\infty) + \int_{-\infty}^{x} f_X(t) dt" /></p>
+<p>이고 <img src="https://tex.s2cms.ru/svg/f(-%5Cinfty)%20%3D%200" alt="f(-\infty) = 0" />이므로</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/F_X(x)%20%3D%20%5Cint_%7B-%5Cinfty%7D%5E%7Bx%7D%20f_X(t)%20dt" alt="F_X(x) = \int_{-\infty}^{x} f_X(t) dt" /></p>
+<p>입니다. 이때 <img src="https://tex.s2cms.ru/svg/f_X(t)" alt="f_X(t)" />를 <strong>probability density function</strong>이라 정의합니다.</p>
