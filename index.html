@@ -1,0 +1,102 @@
+<head>
+<meta charset="utf-8">
+</head>
+<h4>1.Probability density function (pdf)와 cumulative distribution function (cdf) 개념을 설명해 주세요.</h4>
+<p>이 질문에 답하기 위해서는 우선 <strong>random variable</strong> 에 대한 정의가 필요합니다.</p>
+<blockquote>
+<p><em>definition) Consider a random experiment with a sample space C. A function <img src="https://tex.s2cms.ru/svg/X" alt="X" />, which assigns to each element <img src="https://tex.s2cms.ru/svg/c%5Cin%20C" alt="c\in C" /> one and only one number <img src="https://tex.s2cms.ru/svg/X(c)%20%3D%20x" alt="X(c) = x" />, is called a <strong>random variable</strong>. The <strong>space</strong> or <strong>range</strong> of <img src="https://tex.s2cms.ru/svg/X" alt="X" /> is the set of real number <img src="https://tex.s2cms.ru/svg/D%20%3D%20%5C%7Bx%20%3A%20x%20%3D%20X(c)%2C%20c%5Cin%20C%5C%7D" alt="D = \{x : x = X(c), c\in C\}" />.</em></p>
+</blockquote>
+<p>샘플을 추출할 수 있는 공간 <img src="https://tex.s2cms.ru/svg/C" alt="C" />가 있고, 해당 공간의 원소 <img src="https://tex.s2cms.ru/svg/c" alt="c" />에 대하여 1 대 1 대응을 만족하고 치역이 어떤 수(보통은 <img src="https://tex.s2cms.ru/svg/%5CR" alt="\R" />)인 함수를 <strong>random variable</strong>이라 정의합니다. 이 때, 치역인 <img src="https://tex.s2cms.ru/svg/D" alt="D" />는 우리가 분석시 관심을 두는 샘플 스페이스가 됩니다.</p>
+<p>샘플 스페이스 <img src="https://tex.s2cms.ru/svg/D" alt="D" /> 이외에도 함수 <img src="https://tex.s2cms.ru/svg/X" alt="X" />는 또 자체의 확률을 내재하는데요(어떤 원소 <img src="https://tex.s2cms.ru/svg/x%5Cin%20D" alt="x\in D" />가 뽑힐 확률), 이를 두고 <img src="https://tex.s2cms.ru/svg/X" alt="X" />의 <strong>distribution</strong>이라고 합니다.</p>
+<p>다음으로 <strong>cumulative distribution function</strong>에 대한 정의를 살펴보도록 하겠습니다.</p>
+<blockquote>
+<p><em>definition) Let X be a random variable. Then its <strong>cumulative distribution function</strong>(cdf) is defined by <img src="https://tex.s2cms.ru/svg/F_X(x)" alt="F_X(x)" />, where</em></p>
+<blockquote>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/F_X(x)%20%3D%20P_X((-%5Cinfty%2C%20x%5D)%20%3D%20P(%7Bc%5Cin%20C%20%3A%20X(c)%20%5Cleq%20x%7D)" alt="F_X(x) = P_X((-\infty, x]) = P({c\in C : X(c) \leq x})" /></p>
+</blockquote>
+</blockquote>
+<p><img src="https://tex.s2cms.ru/svg/X" alt="X" />를 <strong>random variable</strong>로 두고 그 치역을 들여다 보면, 해당 치역에서 의미를 부여할 수 있는 범위는 <img src="https://tex.s2cms.ru/svg/(-%5Cinfty%2C%20x%5D" alt="(-\infty, x]" /> 즉 어떤 치역의 원소 <img src="https://tex.s2cms.ru/svg/x" alt="x" />이하의 원소 모두입니다. 이렇게 정의하면 축적된 확률분포를 알 수 있을 뿐만 아니라 분포의 <em>skewness</em> 또한 간접적으로 파악할 수 있는 장점이 있습니다.</p>
+<p>그 외의 <strong>cumulative distribution function</strong>의 특성은 다음과 같습니다.</p>
+<ol>
+<li>
+<p><em>Monotone increasing</em><br>
+For all <img src="https://tex.s2cms.ru/svg/a" alt="a" /> and <img src="https://tex.s2cms.ru/svg/b" alt="b" />, if <img src="https://tex.s2cms.ru/svg/a%20%3C%20b" alt="a &lt; b" />, then <img src="https://tex.s2cms.ru/svg/F(a)%20%5Cleq%20F(b)" alt="F(a) \leq F(b)" /></p>
+</li>
+<li>
+<p><em>The lower limit of <img src="https://tex.s2cms.ru/svg/F" alt="F" /> is 0</em><br>
+<img src="https://tex.s2cms.ru/svg/%5Clim_%7Bx%5Cto-%5Cinfty%7D%20F(x)%20%3D%200" alt="\lim_{x\to-\infty} F(x) = 0" /></p>
+</li>
+<li>
+<p><em>The upper limit of <img src="https://tex.s2cms.ru/svg/F" alt="F" /> is 1</em><br>
+<img src="https://tex.s2cms.ru/svg/%5Clim_%7Bx%5Cto%5Cinfty%7D%20F(x)%20%3D%201" alt="\lim_{x\to\infty} F(x) = 1" /></p>
+</li>
+<li>
+<p><em>F is right continuous</em><br>
+<img src="https://tex.s2cms.ru/svg/%5Clim_%7Bx%5Cleftarrow%20x_0%7D%20F(x)%20%3D%20f(x_0)" alt="\lim_{x\leftarrow x_0} F(x) = f(x_0)" /></p>
+</li>
+</ol>
+<p>마지막으로 <strong>probability density function</strong> 의 정의를 살펴보겠습니다. 살펴보기 이전에 우리는 <strong>continuous random variable</strong>에 대한 정의가 필요합니다.</p>
+<blockquote>
+<p><em>definition) We say a random variable is a <strong>continuous random variable</strong> if its cumulative distribution function <img src="https://tex.s2cms.ru/svg/F_X(x)" alt="F_X(x)" /> is a continuous function for all <img src="https://tex.s2cms.ru/svg/x%5Cin%20%5CR" alt="x\in \R" /></em></p>
+</blockquote>
+<p>즉 <em>cdf</em> 가 연속인 <em>random variable</em>을 두고 우리는 <strong>continuous random variable</strong>이라고 정의합니다. 대부분의 <em>continuous random variable</em>들은 절대 연속입니다. 이것의 해석적인 정의는 다음과 같습니다.</p>
+<blockquote>
+<p><em>definition) Let <img src="https://tex.s2cms.ru/svg/I" alt="I" /> be an interval in the real line <img src="https://tex.s2cms.ru/svg/%5CR" alt="\R" />. A function <img src="https://tex.s2cms.ru/svg/f%3AI%5Crightarrow%20%5CR" alt="f:I\rightarrow \R" /> is absolutely continuous on <img src="https://tex.s2cms.ru/svg/I" alt="I" /> if for every positive number <img src="https://tex.s2cms.ru/svg/%5Cepsilon" alt="\epsilon" />, there is a positive number <img src="https://tex.s2cms.ru/svg/%5Cdelta" alt="\delta" /> such that whenever a finite sequence of pairwise disjoint sub-intervals <img src="https://tex.s2cms.ru/svg/(x_k%2C%20y_k)" alt="(x_k, y_k)" /> of <img src="https://tex.s2cms.ru/svg/I" alt="I" /> with <img src="https://tex.s2cms.ru/svg/x_k%2C%20y_k%20%5Cin%20I" alt="x_k, y_k \in I" /> satisfies <img src="https://tex.s2cms.ru/svg/%5Csum_%7Bk%7D%20(y_k%20-%20x_k)%20%3C%20%5Cdelta" alt="\sum_{k} (y_k - x_k) &lt; \delta" /> then
+<img src="https://tex.s2cms.ru/svg/%5Csum_%7Bk%7D%20%7Cf(y_k)%20-%20f(x_k)%7C%20%3C%20%5Cepsilon" alt="\sum_{k} |f(y_k) - f(x_k)| &lt; \epsilon" /></em></p>
+</blockquote>
+<p>즉 어떠한 정의역의 서로소인 원소들의 차로 급수를 형성하더라도, 그 원소들의 치역의 원소들의 차의 절댓값의 급수는 일정 범위를 넘지 않는다는 정의입니다. 이것과 동치인 정의는 다음과 같습니다.</p>
+<blockquote>
+<p><em>definition) <img src="https://tex.s2cms.ru/svg/f" alt="f" /> has derivative <img src="https://tex.s2cms.ru/svg/f%5E%5Cprime" alt="f^\prime" /> a.e., the derivative is Lebesgue integrable, and <img src="https://tex.s2cms.ru/svg/f(x)%20%3D%20f(a)%20%2B%20%5Cint_%7Ba%7D%5E%7Bx%7D%20f%5E%5Cprime(x)%20dx" alt="f(x) = f(a) + \int_{a}^{x} f^\prime(x) dx" /> for all <img src="https://tex.s2cms.ru/svg/x%5Cin%20%5Ba%2C%20b%5D" alt="x\in [a, b]" /></em></p>
+</blockquote>
+<p>즉 <img src="https://tex.s2cms.ru/svg/f" alt="f" /> 가 measure zero set 이외의 공간에서 도함수를 가지고, 도함수가 르벡 적분 가능하며 위의 식과 같이 표현가능할 경우 절대연속이라 정의합니다. 이것을 <em>continuous random variable</em>에 적용하게 되면,</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/F_X(x)%20%3D%20f(-%5Cinfty)%20%2B%20%5Cint_%7B-%5Cinfty%7D%5E%7Bx%7D%20f_X(t)%20dt" alt="F_X(x) = f(-\infty) + \int_{-\infty}^{x} f_X(t) dt" /></p>
+<p>이고 <img src="https://tex.s2cms.ru/svg/f(-%5Cinfty)%20%3D%200" alt="f(-\infty) = 0" />이므로</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/F_X(x)%20%3D%20%5Cint_%7B-%5Cinfty%7D%5E%7Bx%7D%20f_X(t)%20dt" alt="F_X(x) = \int_{-\infty}^{x} f_X(t) dt" /></p>
+<p>입니다. 이때 <img src="https://tex.s2cms.ru/svg/f_X(t)" alt="f_X(t)" />를 <strong>probability density function</strong>이라 정의합니다.</p>
+<h4>2.가우시안 분포에 대해 설명해 주세요</h4>
+<p>다음과 같은 적분을 고려해 보겠습니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/I%20%3D%20%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7D%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp(%5Cfrac%7B-z%5E2%7D%7B2%7D)dz%20-(1)" alt="I = \int_{-\infty}^{\infty}\frac{1}{\sqrt{2\pi}}exp(\frac{-z^2}{2})dz -(1)" /></p>
+<p>이 적분의 integrand 는 positive continuous function 이며 upper bound 가 존재합니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/0%20%3C%20exp(%5Cfrac%7B-z%5E2%7D%7B2%7D)%20%3C%20exp(-%7CZ%7C%20%2B%201)%2C%20-%5Cinfty%20%3C%20z%20%3C%20%5Cinfty" alt="0 &lt; exp(\frac{-z^2}{2}) &lt; exp(-|Z| + 1), -\infty &lt; z &lt; \infty" /></p>
+<p>이 적분의 값을 구하기 위해 우선 제곱을 씌워주면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/I%5E2%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7D%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7D%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7Dexp(-%5Cfrac%7Bz%5E2%20%2B%20w%5E2%7D%7B2%7D)dzdw" alt="I^2 = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty}\int_{-\infty}^{\infty}exp(-\frac{z^2 + w^2}{2})dzdw" /></p>
+<p>가 됩니다. 이것을 극좌표계로 다시 표현하면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/I%5E2%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7D%5Cint_%7B0%7D%5E%7B2%5Cpi%7D%5Cint_%7B0%7D%5E%7B%5Cinfty%7Dexp(-%5Cfrac%7Br%5E2%7D%7B2%7D)r%20drd%5Ctheta%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7D%5Cint_%7B0%7D%5E%7B2%5Cpi%7Dd%5Ctheta%20%3D%201" alt="I^2 = \frac{1}{\sqrt{2\pi}}\int_{0}^{2\pi}\int_{0}^{\infty}exp(-\frac{r^2}{2})r drd\theta = \frac{1}{\sqrt{2\pi}}\int_{0}^{2\pi}d\theta = 1" /></p>
+<p>입니다.</p>
+<p>(1) 에서 <em>integrand</em>는 모든 정의역에 대해서 양의 값(support)을 가지고, 적분하면 1이 되므로 <em>continuous random variable</em>의 <em>pdf</em>가 됩니다. 우리는 이 <img src="https://tex.s2cms.ru/svg/Z" alt="Z" />에 관한 분포를 <strong>Normal(Gaussian) distribution</strong>이라 정의하고 다음과 같이 표현합니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/f(z)%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp(%5Cfrac%7B-z%5E2%7D%7B2%7D)%2C%20-%5Cinfty%20%3C%20z%20%3C%20%5Cinfty" alt="f(z) = \frac{1}{\sqrt{2\pi}}exp(\frac{-z^2}{2}), -\infty &lt; z &lt; \infty" /></p>
+<p>이 분포의 <em>moment generating function</em>은 다음과 같습니다. 우선 <img src="https://tex.s2cms.ru/svg/t%5Cin%20%5CR" alt="t\in \R" />에서</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/E%5Bexp(tZ)%5D%20%3D%20%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7Dexp%5C%7Btz%5C%7D%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp%5C%7B-%5Cfrac%7B1%7D%7B2%7Dz%5E2%5C%7Ddz" alt="E[exp(tZ)] = \int_{-\infty}^{\infty}exp\{tz\}\frac{1}{\sqrt{2\pi}}exp\{-\frac{1}{2}z^2\}dz" /></p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/%20%3D%20exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp%5C%7B-%5Cfrac%7B1%7D%7B2%7D(z%20-%20t)%5E2%5C%7Ddz" alt=" = exp\{\frac{1}{2}t^2\}\int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}exp\{-\frac{1}{2}(z - t)^2\}dz" /></p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/%20%3D%20exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp%5C%7B-%5Cfrac%7B1%7D%7B2%7Dw%5E2%5C%7Ddw" alt=" = exp\{\frac{1}{2}t^2\}\int_{-\infty}^{\infty} \frac{1}{\sqrt{2\pi}}exp\{-\frac{1}{2}w^2\}dw" /></p>
+<p>입니다. 따라서</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/M_Z(t)%20%3D%20exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D" alt="M_Z(t) = exp\{\frac{1}{2}t^2\}" /></p>
+<p>이고, 이것의 1 계 도함수와 2 계 도함수는 다음과 같습니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/M_z%5E%5Cprime(t)%20%3D%20t*exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D" alt="M_z^\prime(t) = t*exp\{\frac{1}{2}t^2\}" /></p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/M_z%5E%7B%5Cprime%5Cprime%7D(t)%20%3D%20exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D%20%2B%20t%5E2*exp%5C%7B%5Cfrac%7B1%7D%7B2%7Dt%5E2%5C%7D" alt="M_z^{\prime\prime}(t) = exp\{\frac{1}{2}t^2\} + t^2*exp\{\frac{1}{2}t^2\}" /></p>
+<p>입니다. <img src="https://tex.s2cms.ru/svg/t%20%3D%200" alt="t = 0" />에서 값을 평가하면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/E(Z)%20%3D%200%2C%20Var(Z)%20%3D%201" alt="E(Z) = 0, Var(Z) = 1" /></p>
+<p>입니다.</p>
+<p>다음으로 임의의 <em>continuous random variable</em> <img src="https://tex.s2cms.ru/svg/X" alt="X" />를 다음과 같이 정의합니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/X%20%3D%20bZ%20%2B%20a%2C%20b%20%3E%200" alt="X = bZ + a, b &gt; 0" /></p>
+<p>이것은 <em>bijective</em>하므로 <em>(jacobian)</em> <img src="https://tex.s2cms.ru/svg/J%20%3D%20b%5E%7B-1%7D" alt="J = b^{-1}" />이고 이것을 변수변환하면 <em>pdf</em>는 다음과 같은 형태가 됩니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/f_X(x)%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7Db%7Dexp%5C%7B-%5Cfrac%7B1%7D%7B2%7D(%5Cfrac%7Bx%20-%20a%7D%7Bb%7D)%5E2%5C%7D%2C%20-%5Cinfty%20%3C%20x%20%3C%20%5Cinfty" alt="f_X(x) = \frac{1}{\sqrt{2\pi}b}exp\{-\frac{1}{2}(\frac{x - a}{b})^2\}, -\infty &lt; x &lt; \infty" /></p>
+<p>이것이 일반적으로 정의되는 Gaussian 분포함수의 형태입니다.</p>
+<h4>3. Prior, likelihood, posterior에 대해 각각 설명해 주세요</h4>
+<h4>Prior</h4>
+<p><em>X</em>가 <img src="https://tex.s2cms.ru/svg/%5Ctheta" alt="\theta" />에 의해 그 분포가 결정되는 <em>random variable</em> 이라고 가정하고, 이 때 <img src="https://tex.s2cms.ru/svg/%5Ctheta" alt="\theta" />는 <em>well-defined</em> 된 <em>set</em> <img src="https://tex.s2cms.ru/svg/%5COmega" alt="\Omega" /> 의 한 원소라고 가정합니다. 여기서 <img src="https://tex.s2cms.ru/svg/%5Ctheta" alt="\theta" /> 는 평균이나 분산 같은 추정량이면 데이터를 더 잘 표현할 수 있는 값이 됩니다.</p>
+<p>역사적으로 <em>Frequentist</em>들은 이 <img src="https://tex.s2cms.ru/svg/%5Ctheta" alt="\theta" />를 파라미터로 보았지만, <em>Bayesian</em>들은 <img src="https://tex.s2cms.ru/svg/%5Ctheta" alt="\theta" />를 <img src="https://tex.s2cms.ru/svg/%5COmega" alt="\Omega" />를 정의역으로 가지는 <em>random variable</em> <img src="https://tex.s2cms.ru/svg/%5CTheta" alt="\Theta" />라는 관점에서 보았습니다. 그러므로 우리는 <img src="https://tex.s2cms.ru/svg/%5CTheta" alt="\Theta" />에 관한 <em>pdf</em>를 정의할 수 있고,</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/h(%5Ctheta)%20%3D%20%5Cbegin%7Bcases%7Dk%2C%20%5Ctheta%5Cin%5CTheta%5C%5C%200%2C%20%5Ctheta%5Cnotin%5CTheta%5Cend" alt="h(\theta) = \begin{cases}k, \theta\in\Theta\\ 0, \theta\notin\Theta\end" /></p>
+<p>이 <em>pdf</em>를 <strong>prior</strong> 라고 정의합니다.</p>
+<h4>Likelihood</h4>
+<p><em>Random sample</em> <img src="https://tex.s2cms.ru/svg/X_1%2C%20X_2%2C%20...%20X_n" alt="X_1, X_2, ... X_n" /> 이 있다고 가정합니다. <img src="https://tex.s2cms.ru/svg/%5CTheta%20%3D%20%5Ctheta" alt="\Theta = \theta" />가 결정되었을 때 우리는 이것을 <em>joint conditional pdf</em>의 형태로 나태낼 수 있고 그것은 다음과 같습니다.</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/L(x%7C%5Ctheta)%20%3D%20f(x_1%7C%5Ctheta)...f(x_n%7C%5Ctheta)" alt="L(x|\theta) = f(x_1|\theta)...f(x_n|\theta)" /></p>
+<p>우리는 이것을 <strong>likelihood</strong> 라고 정의합니다.</p>
+<h4>Posterior</h4>
+<p>위의 식에 <strong>Bayes theorem</strong>을 적용하게 되면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/g(x%2C%20%5Ctheta)%20%3D%20L(x%7C%5Ctheta)h(%5Ctheta)" alt="g(x, \theta) = L(x|\theta)h(\theta)" /></p>
+<p>가 되고 이것을 <img src="https://tex.s2cms.ru/svg/%5Ctheta" alt="\theta" /> 에 관해서 marginalize out 시키면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/g_1(x)%20%3D%20%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7D%20g(x%2C%20%5Ctheta)d%5Ctheta" alt="g_1(x) = \int_{-\infty}^{\infty} g(x, \theta)d\theta" /></p>
+<p>가 성립합니다. 이것을 <em>random sample</em> <img src="https://tex.s2cms.ru/svg/X" alt="X" /> 가 주어졌을 때 <img src="https://tex.s2cms.ru/svg/%5CTheta" alt="\Theta" />에 관한 pdf 로 나타내면</p>
+<p align="center" style="text-align: center;"><img align="center" src="https://tex.s2cms.ru/svg/k(%5Ctheta%7Cx)%20%3D%20%5Cfrac%7Bg(x%2C%20%5Ctheta)%7D%7Bg_1(x)%7D%20%3D%20%5Cfrac%7BL(x%7C%5Ctheta)h(%5Ctheta)%7D%7Bg_1(x)%7D" alt="k(\theta|x) = \frac{g(x, \theta)}{g_1(x)} = \frac{L(x|\theta)h(\theta)}{g_1(x)}" /></p>
+<p>입니다. 이 때 <img src="https://tex.s2cms.ru/svg/k(%5Ctheta%7Cx)" alt="k(\theta|x)" /> 를 <strong>posterior</strong> 라 정의합니다.</p>
