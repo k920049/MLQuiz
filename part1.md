@@ -14,35 +14,37 @@
 >
 > > ![F_X(x) = P_X((-\infty, x]) = P({c\in C : X(c) \leq x})](https://tex.s2cms.ru/svg/F_X(x)%20%3D%20P_X((-%5Cinfty%2C%20x%5D)%20%3D%20P(%7Bc%5Cin%20C%20%3A%20X(c)%20%5Cleq%20x%7D))
 
-![X](https://tex.s2cms.ru/svg/X)를 **random variable**로 두고 그 치역을 들여다 보면, 해당 치역에서 의미를 부여할 수 있는 범위는 ![(-\infty, x]](https://tex.s2cms.ru/svg/(-%5Cinfty%2C%20x%5D) 즉 어떤 치역의 원소 ![x](https://tex.s2cms.ru/svg/x)이하의 원소 모두입니다. 이렇게 정의하면 축적된 확률분포를 알 수 있을 뿐만 아니라 분포의 _skewness_ 또한 간접적으로 파악할 수 있는 장점이 있습니다.
+![X](https://tex.s2cms.ru/svg/X)를 **random variable**로 두고 그 치역을 들여다 보면, 해당 치역에서 의미를 부여할 수 있는 범위는 ![(-\infty, x]](https://tex.s2cms.ru/svg/(-%5Cinfty%2C%20x%5D) 즉 어떤 치역의 원소 ![x](https://tex.s2cms.ru/svg/x)이하의 원소 모두입니다. 이렇게 정의하면 축적된 확률분포를 알 수 있을 뿐만 아니라 분포의 *skewness* 또한 간접적으로 파악할 수 있는 장점이 있습니다.
 
 그 외의 **cumulative distribution function**의 특성은 다음과 같습니다.
 
-1.  _Monotone increasing_  
+1.  *Monotone increasing*
+
     For all ![a](https://tex.s2cms.ru/svg/a) and ![b](https://tex.s2cms.ru/svg/b), if ![a < b](https://tex.s2cms.ru/svg/a%20%3C%20b), then ![F(a) \leq F(b)](https://tex.s2cms.ru/svg/F(a)%20%5Cleq%20F(b))
 
-2.  _The lower limit of ![F](https://tex.s2cms.ru/svg/F) is 0_  
+2.  *The lower limit of ![F](https://tex.s2cms.ru/svg/F) is 0*  
     ![\lim_{x\to-\infty} F(x) = 0](https://tex.s2cms.ru/svg/%5Clim_%7Bx%5Cto-%5Cinfty%7D%20F(x)%20%3D%200)
 
-3.  _The upper limit of ![F](https://tex.s2cms.ru/svg/F) is 1_  
+3.  *The upper limit of ![F](https://tex.s2cms.ru/svg/F) is 1*  
     ![\lim_{x\to\infty} F(x) = 1](https://tex.s2cms.ru/svg/%5Clim_%7Bx%5Cto%5Cinfty%7D%20F(x)%20%3D%201)
 
-4.  _F is right continuous_  
+4.  *F is right continuous*  
     ![\lim_{x\leftarrow x_0} F(x) = f(x_0)](https://tex.s2cms.ru/svg/%5Clim_%7Bx%5Cleftarrow%20x_0%7D%20F(x)%20%3D%20f(x_0))
+
 
 마지막으로 **probability density function** 의 정의를 살펴보겠습니다. 살펴보기 이전에 우리는 **continuous random variable**에 대한 정의가 필요합니다.
 
-> _definition) We say a random variable is a **continuous random variable** if its cumulative distribution function ![F_X(x)](https://tex.s2cms.ru/svg/F_X(x)) is a continuous function for all ![x\in \R](https://tex.s2cms.ru/svg/x%5Cin%20%5CR)_
+> *definition) We say a random variable is a **continuous random variable** if its cumulative distribution function ![F_X(x)](https://tex.s2cms.ru/svg/F_X(x)) is a continuous function for all ![x\in \R](https://tex.s2cms.ru/svg/x%5Cin%20%5CR)*
 
-즉 _cdf_ 가 연속인 _random variable_을 두고 우리는 **continuous random variable**이라고 정의합니다. 대부분의 _continuous random variable_들은 절대 연속입니다. 이것의 해석적인 정의는 다음과 같습니다.
+즉 *cdf* 가 연속인 *random variable*을 두고 우리는 **continuous random variable**이라고 정의합니다. 대부분의 *continuous random variable*들은 절대 연속입니다. 이것의 해석적인 정의는 다음과 같습니다.
 
-> _definition) Let ![I](https://tex.s2cms.ru/svg/I) be an interval in the real line ![\R](https://tex.s2cms.ru/svg/%5CR). A function ![f:I\rightarrow \R](https://tex.s2cms.ru/svg/f%3AI%5Crightarrow%20%5CR) is absolutely continuous on ![I](https://tex.s2cms.ru/svg/I) if for every positive number ![\epsilon](https://tex.s2cms.ru/svg/%5Cepsilon), there is a positive number ![\delta](https://tex.s2cms.ru/svg/%5Cdelta) such that whenever a finite sequence of pairwise disjoint sub-intervals ![(x_k, y_k)](https://tex.s2cms.ru/svg/(x_k%2C%20y_k)) of ![I](https://tex.s2cms.ru/svg/I) with ![x_k, y_k \in I](https://tex.s2cms.ru/svg/x_k%2C%20y_k%20%5Cin%20I) satisfies ![\sum_{k} (y_k - x_k) < \delta](https://tex.s2cms.ru/svg/%5Csum_%7Bk%7D%20(y_k%20-%20x_k)%20%3C%20%5Cdelta) then ![\sum_{k} |f(y_k) - f(x_k)| < \epsilon](https://tex.s2cms.ru/svg/%5Csum_%7Bk%7D%20%7Cf(y_k)%20-%20f(x_k)%7C%20%3C%20%5Cepsilon)_
+> *definition) Let ![I](https://tex.s2cms.ru/svg/I) be an interval in the real line ![\R](https://tex.s2cms.ru/svg/%5CR). A function ![f:I\rightarrow \R](https://tex.s2cms.ru/svg/f%3AI%5Crightarrow%20%5CR) is absolutely continuous on ![I](https://tex.s2cms.ru/svg/I) if for every positive number ![\epsilon](https://tex.s2cms.ru/svg/%5Cepsilon), there is a positive number ![\delta](https://tex.s2cms.ru/svg/%5Cdelta) such that whenever a finite sequence of pairwise disjoint sub-intervals ![(x_k, y_k)](https://tex.s2cms.ru/svg/(x_k%2C%20y_k)) of ![I](https://tex.s2cms.ru/svg/I) with ![x_k, y_k \in I](https://tex.s2cms.ru/svg/x_k%2C%20y_k%20%5Cin%20I) satisfies ![\sum_{k} (y_k - x_k) < \delta](https://tex.s2cms.ru/svg/%5Csum_%7Bk%7D%20(y_k%20-%20x_k)%20%3C%20%5Cdelta) then ![\sum_{k} |f(y_k) - f(x_k)| < \epsilon](https://tex.s2cms.ru/svg/%5Csum_%7Bk%7D%20%7Cf(y_k)%20-%20f(x_k)%7C%20%3C%20%5Cepsilon)*
 
 즉 어떠한 정의역의 서로소인 원소들의 차로 급수를 형성하더라도, 그 원소들의 치역의 원소들의 차의 절댓값의 급수는 일정 범위를 넘지 않는다는 정의입니다. 이것과 동치인 정의는 다음과 같습니다.
 
-> _definition) ![f](https://tex.s2cms.ru/svg/f) has derivative ![f^\prime](https://tex.s2cms.ru/svg/f%5E%5Cprime) a.e., the derivative is Lebesgue integrable, and ![f(x) = f(a) + \int_{a}^{x} f^\prime(x) dx](https://tex.s2cms.ru/svg/f(x)%20%3D%20f(a)%20%2B%20%5Cint_%7Ba%7D%5E%7Bx%7D%20f%5E%5Cprime(x)%20dx) for all ![x\in [a, b]](https://tex.s2cms.ru/svg/x%5Cin%20%5Ba%2C%20b%5D)_
+> *definition) ![f](https://tex.s2cms.ru/svg/f) has derivative ![f^\prime](https://tex.s2cms.ru/svg/f%5E%5Cprime) a.e., the derivative is Lebesgue integrable, and ![f(x) = f(a) + \int_{a}^{x} f^\prime(x) dx](https://tex.s2cms.ru/svg/f(x)%20%3D%20f(a)%20%2B%20%5Cint_%7Ba%7D%5E%7Bx%7D%20f%5E%5Cprime(x)%20dx) for all ![x\in [a, b]](https://tex.s2cms.ru/svg/x%5Cin%20%5Ba%2C%20b%5D)*
 
-즉 ![f](https://tex.s2cms.ru/svg/f) 가 measure zero set 이외의 공간에서 도함수를 가지고, 도함수가 르벡 적분 가능하며 위의 식과 같이 표현가능할 경우 절대연속이라 정의합니다. 이것을 _continuous random variable_에 적용하게 되면,
+즉 ![f](https://tex.s2cms.ru/svg/f) 가 measure zero set 이외의 공간에서 도함수를 가지고, 도함수가 르벡 적분 가능하며 위의 식과 같이 표현가능할 경우 절대연속이라 정의합니다. 이것을 *continuous random variable*에 적용하게 되면,
 
 ![F_X(x) = f(-\infty) + \int_{-\infty}^{x} f_X(t) dt](https://tex.s2cms.ru/svg/F_X(x)%20%3D%20f(-%5Cinfty)%20%2B%20%5Cint_%7B-%5Cinfty%7D%5E%7Bx%7D%20f_X(t)%20dt)
 

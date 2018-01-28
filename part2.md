@@ -18,11 +18,11 @@
 
 입니다.
 
-(1) 에서 _integrand_는 모든 정의역에 대해서 양의 값(support)을 가지고, 적분하면 1이 되므로 _continuous random variable_의 _pdf_가 됩니다. 우리는 이 ![Z](https://tex.s2cms.ru/svg/Z)에 관한 분포를 **Normal(Gaussian) distribution**이라 정의하고 다음과 같이 표현합니다.
+(1) 에서 *integrand*는 모든 정의역에 대해서 양의 값(support)을 가지고, 적분하면 1이 되므로 *continuous random variable*의 *pdf*가 됩니다. 우리는 이 ![Z](https://tex.s2cms.ru/svg/Z)에 관한 분포를 **Normal(Gaussian) distribution**이라 정의하고 다음과 같이 표현합니다.
 
 ![f(z) = \frac{1}{\sqrt{2\pi}}exp(\frac{-z^2}{2}), -\infty < z < \infty](https://tex.s2cms.ru/svg/f(z)%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp(%5Cfrac%7B-z%5E2%7D%7B2%7D)%2C%20-%5Cinfty%20%3C%20z%20%3C%20%5Cinfty)
 
-이 분포의 _moment generating function_은 다음과 같습니다. 우선 ![t\in \R](https://tex.s2cms.ru/svg/t%5Cin%20%5CR)에서
+이 분포의 *moment generating function*은 다음과 같습니다. 우선 ![t\in \R](https://tex.s2cms.ru/svg/t%5Cin%20%5CR)에서
 
 ![E[exp(tZ)] = \int_{-\infty}^{\infty}exp\{tz\}\frac{1}{\sqrt{2\pi}}exp\{-\frac{1}{2}z^2\}dz](https://tex.s2cms.ru/svg/E%5Bexp(tZ)%5D%20%3D%20%5Cint_%7B-%5Cinfty%7D%5E%7B%5Cinfty%7Dexp%5C%7Btz%5C%7D%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7D%7Dexp%5C%7B-%5Cfrac%7B1%7D%7B2%7Dz%5E2%5C%7Ddz)
 
@@ -46,11 +46,11 @@
 
 입니다.
 
-다음으로 임의의 _continuous random variable_ ![X](https://tex.s2cms.ru/svg/X)를 다음과 같이 정의합니다.
+다음으로 임의의 *continuous random variable* ![X](https://tex.s2cms.ru/svg/X)를 다음과 같이 정의합니다.
 
 ![X = bZ + a, b > 0](https://tex.s2cms.ru/svg/X%20%3D%20bZ%20%2B%20a%2C%20b%20%3E%200)
 
-이것은 _bijective_하므로 _(jacobian)_ ![J = b^{-1}](https://tex.s2cms.ru/svg/J%20%3D%20b%5E%7B-1%7D)이고 이것을 변수변환하면 _pdf_는 다음과 같은 형태가 됩니다.
+이것은 *bijective*하므로 *(jacobian)* ![J = b^{-1}](https://tex.s2cms.ru/svg/J%20%3D%20b%5E%7B-1%7D)이고 이것을 변수변환하면 *pdf*는 다음과 같은 형태가 됩니다.
 
 ![f_X(x) = \frac{1}{\sqrt{2\pi}b}exp\{-\frac{1}{2}(\frac{x - a}{b})^2\}, -\infty < x < \infty](https://tex.s2cms.ru/svg/f_X(x)%20%3D%20%5Cfrac%7B1%7D%7B%5Csqrt%7B2%5Cpi%7Db%7Dexp%5C%7B-%5Cfrac%7B1%7D%7B2%7D(%5Cfrac%7Bx%20-%20a%7D%7Bb%7D)%5E2%5C%7D%2C%20-%5Cinfty%20%3C%20x%20%3C%20%5Cinfty)
 
